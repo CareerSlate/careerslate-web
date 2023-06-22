@@ -1,13 +1,16 @@
-import { useState } from "react"
+import { Header } from "./components"
+import style from "./style"
 
 function App() {
   return (
-    <>
-      <div className="">
-        <h1>Career Slate</h1>
-        <p>Find the best school near you.</p>
+    <div className="w-full">
+      {/* header */}
+      <div className={`w-full ${style.flexStart} ${style.paddingX} shadow-lg`}>
+        <div className={`${style.boxWidth}`}>
+          <Header />
+        </div>
       </div>
-    </>
+    </div>
   )
 }
 
