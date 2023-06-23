@@ -5,6 +5,9 @@ export default {
     extend: {
       colors: {
         primary: "#FFA500"
+      },
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"]
       }
     },
     screens: {
