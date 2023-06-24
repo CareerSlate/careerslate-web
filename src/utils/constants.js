@@ -1,6 +1,7 @@
-import { logo } from "../assets"
+import { logo, error } from "../assets"
 import { HiMenu } from "react-icons/hi"
 
+// Header Component
 export const logoImg = {
   img: logo,
   alt: "CareerSlate"
@@ -40,4 +41,10 @@ export const disclaimerMessage = {
 export const footerDisclaimerMessage = {
   title: "Disclaimer",
   message: "We try to show the right information, but does not take responsibility for the genuineness and authenticity of the content."
+}
+
+// Error Page
+export const errorImg = {
+  img: error,
+  alt: "404 | Page Not Found "
 }
