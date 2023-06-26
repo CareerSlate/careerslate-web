@@ -6,7 +6,7 @@ const style = {
 
   paddingX: "px-6 lg:px-16",
   paddingY: "py-6 lg:py-16",
-  marginY: "mx-6 lg:mx-16",
+  marginX: "mx-6 lg:mx-16",
   marginY: "my-6 lg:my-16"
 }
 

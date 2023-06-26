@@ -4,14 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#FFA500"
+        // primary: "#25265e",
+        primary: "#23384e",
+        // primary: "#0556f3",
+        // primary: "#ddeddd",
+        // primary: "#25265e",
+        secondary: "#055ef3"
       },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"]
       }
     },
     screens: {
-      xs: "420px",
+      xs: "380px",
       sm: "640px",
       md: "768px",
       lg: "1024px",

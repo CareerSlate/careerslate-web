@@ -48,3 +48,39 @@ export const errorImg = {
   img: error,
   alt: "404 | Page Not Found "
 }
+
+// School Page
+export const sortOptions = ["Name", "Rating"]
+
+export const filterOptions = [
+  {
+    id: "board",
+    title: "Boards / Curriculum",
+    options: ["CBSE", "ICSE", "State Board", "IB", "IGCSE"]
+  },
+  {
+    id: "classification",
+    title: "Classification",
+    options: ["Co-educational", "Boys", "Girls"]
+  },
+  {
+    id: "management-type",
+    title: "Management Type",
+    options: ["Private School", "Government School", "Kendriya Vidyalaya (KVS)", "Jawahar Navodaya (JNV)"]
+  },
+  {
+    id: "medium",
+    title: "Medium",
+    options: ["English", "Hindi"]
+  },
+  {
+    id: "school-level",
+    title: "School Level",
+    options: ["Middle School", "Secondary School", "Senior Secondary School"]
+  },
+  {
+    id: "location",
+    title: "Cities",
+    options: ["Delhi", "Gurgaon (Gurugram)", "Noida"]
+  }
+]
