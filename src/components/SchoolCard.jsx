@@ -3,19 +3,17 @@ import { school } from "../assets"
 
 const SchoolCard = ({ schoolData }) => {
   // console.log(name)
-  const { aff_no, name, region, district, pincode, state, status, n_medium, soc_name, year_found, princi_name, off_ph_no } = schoolData
-  const img = ""
+  const { aff_no, name, region, img, district, pincode, state, status, n_medium, soc_name, year_found, princi_name, off_ph_no } = schoolData
   const board = "CBSE"
-  // console.log(name)
   return (
-    <div className="w-full border rounded-sm bg-white flex sm:flex-row flex-col justify-between  hover:shadow-xl ">
+    <div className="w-full border rounded-sm bg-white flex sm:flex-row flex-col justify-between shadow-md hover:shadow-xl ">
       {/* school image */}
-      <div className="sm:w-[30%] m-4 border rounded-sm bg-slate-50  relative flex justify-center">
+      <div className="sm:w-[30%] m-4 border rounded-sm bg-slate-50  relative flex justify-center items-center group:">
         <Link to={`school/${aff_no}`} className="inline-block w-[100%] h-[100%] flex justify-center items-center">
           <img src={img ? img : school} alt="" className="w-[100%] object-cover hover:scale-105" />
         </Link>
         {/* <div className="opacity-0 hover:opacity-100 absolute top-0 left-0 w-full h-full bg-black/20 flex justify-center items-center">
-          <p className=" text-slate-50 text-sm border rounded-3xl opacity-90 p-2">Read More</p>
+          <p className="text-slate-50 text-sm border rounded-3xl opacity-90 p-2">Read More</p>
         </div> */}
       </div>
 

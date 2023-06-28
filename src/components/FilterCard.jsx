@@ -1,4 +1,3 @@
-import React from "react"
 import Checkbox from "./Checkbox"
 
 const FilterCard = ({ title, options }) => {
@@ -7,7 +6,7 @@ const FilterCard = ({ title, options }) => {
       <h4 className="font-medium  pb-0.5">{title}</h4>
       <div>
         {options?.map(option => {
-          return <Checkbox key={option} title={option} />
+          return <Checkbox key={option} title={title} checkboxTitle={option} />
         })}
       </div>
     </div>

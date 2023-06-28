@@ -1,6 +1,8 @@
 import { logo, error } from "../assets"
 import { HiMenu } from "react-icons/hi"
 
+export const DISPLAY_SCHOOL_OFFSET = 5
+
 // Header Component
 export const logoImg = {
   img: logo,
@@ -50,9 +52,9 @@ export const errorImg = {
 }
 
 // School Page
-export const sortOptions = ["Name", "Rating"]
+export const sortOptions = ["Relevance", "A to Z", "Z to A", "Rating"]
 
-export const filterOptions = [
+export const filterMenu = [
   {
     id: "board",
     title: "Boards / Curriculum",
@@ -76,11 +78,32 @@ export const filterOptions = [
   {
     id: "school-level",
     title: "School Level",
-    options: ["Middle School", "Secondary School", "Senior Secondary School"]
+    options: ["Middle Class", "Secondary School", "Senior Secondary"]
+  }
+]
+
+// Intro
+export const introDetail = {
+  title: "List of top CBSE Schools in 2023 Ranking",
+  description: "Checkout list of Top CBSE Schools in 2023 offering CBSE board curriculum. Find below the complete list of CBSE Schools in offering CBSE Curriculum with information on Fees, Admission procedure, Ranking, Rating & Reviews, Curriculum, Facilities, Contact Details and address. This list of Top Best CBSE Schools in covers CBSE affiliated Schools in ."
+}
+
+// Bread Crumb
+export const breadCrumbOptions = [
+  {
+    name: "home",
+    link: "#"
   },
   {
-    id: "location",
-    title: "Cities",
-    options: ["Delhi", "Gurgaon (Gurugram)", "Noida"]
+    name: "school",
+    link: "#"
+  },
+  {
+    name: "india",
+    link: "#"
+  },
+  {
+    name: "CBSE",
+    link: "#"
   }
 ]

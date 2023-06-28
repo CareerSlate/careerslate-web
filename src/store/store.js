@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit"
 import schoolSlice from "./schoolSlice"
-import displaySlice from "./displaySlice"
+import filterSlice from "./filterSlice"
 
 const store = configureStore({
   reducer: {
     school: schoolSlice,
-    display: displaySlice
+    filter: filterSlice
   }
 })
 
