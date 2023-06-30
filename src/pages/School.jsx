@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { SchoolCard, Search, BreadCrumb, Intro, Sort, LoadMore, Filter, BackToTop, BottomFilterSortButton } from "../components"
+import { SchoolCard, Search, BreadCrumb, Intro, Sort, LoadMore, Filter, BackToTop, BottomFilterSortButton, Shimmer, ServerError } from "../components"
 import useFetchSchools from "../utils/useFetchSchools"
 import { sortOptions, filterMenu, introDetail, breadCrumbOptions } from "../utils/constants"
 import style from "../style"
@@ -7,7 +7,13 @@ import style from "../style"
 const School = () => {
   const { serverError } = useFetchSchools()
   if (serverError) {
-    console.log("serverError: ", serverError)
+    // console.log("serverError: ", serverError)
+    return (
+      <>
+        <Shimmer />
+        <ServerError />
+      </>
+    )
   }
 
   const totalSchoolCount = useSelector(store => store.school.totalSchoolCount)
@@ -16,10 +22,11 @@ const School = () => {
   const displaySchools = useSelector(store => store.school.displaySchools)
 
   if (totalSchoolCount === 0) {
-    return "...Loading"
+    return <Shimmer />
   }
+
   return (
-    <section id="school" className={`w-full bg-slate-200/40 relative`}>
+    <section id="school" className={`w-full bg-slate-200/40 relative `}>
       <Search />
 
       <BreadCrumb options={breadCrumbOptions} />
@@ -39,6 +46,8 @@ const School = () => {
               <Sort sortOptions={sortOptions} />
             </div>
 
+            {displaySchools.length === 0 && <div className="flex justify-center my-6 text-red-500 text-xl font-semibold ">No Match Found</div>}
+
             {/* school list */}
             <div className="flex flex-col gap-5">
               {displaySchools?.map(schoolData => {
@@ -46,8 +55,8 @@ const School = () => {
               })}
             </div>
 
-            {/* Load More */}
-            {displayIndex < schoolCount && <LoadMore />}
+            {/* Load More & Reached */}
+            {displayIndex < schoolCount ? <LoadMore /> : <p className="w-full py-6 text-center text-lg text-slate-700">Looks like you've reached the end</p>}
           </main>
         </div>
       </div>

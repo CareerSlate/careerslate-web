@@ -12,5 +12,8 @@ import Search from "./Search"
 import LoadMore from "./LoadMore"
 import BackToTop from "./BackToTop"
 import BottomFilterSortButton from "./BottomFilterSortButton"
+import Shimmer from "./Shimmer"
+import ServerError from "./ServerError"
+import Button from "./Button"
 
-export { Header, SchoolCard, Sort, Filter, FilterCard, Checkbox, Intro, BreadCrumb, Search, LoadMore, BackToTop, BottomFilterSortButton }
+export { Header, SchoolCard, Sort, Filter, FilterCard, Checkbox, Intro, BreadCrumb, Search, LoadMore, BackToTop, BottomFilterSortButton, Shimmer, ServerError, Button }

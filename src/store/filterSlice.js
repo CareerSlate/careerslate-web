@@ -28,7 +28,7 @@ const filterSlice = createSlice({
         const key = action.payload[0],
           value = action.payload[1],
           index = state.filterOption[key]?.indexOf(value)
-        if (state.filterOption[key]) {
+        if (state.filterOption[key] && index !== -1) {
           state.filterOption[key].splice(index, 1)
         }
       } catch (error) {
