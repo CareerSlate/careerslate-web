@@ -11,7 +11,7 @@ const Header = () => {
     setIsMenuOpen(prev => !prev)
   }
   return (
-    <nav className="flex justify-between items-center gap-4 py-3">
+    <nav className="flex justify-between items-center gap-4 py-3 ">
       {/* logo */}
       <Link to="/">
         <img data-testid="logo" src={logoImg.img} alt={logoImg.alt} className="w-[160px]" />
@@ -21,7 +21,7 @@ const Header = () => {
       <ul data-testid="navbar" className="flex-1 hidden md:flex justify-end items-center gap-6 text-slate-800">
         {navLinks.map(navLink => {
           return (
-            <li key={navLink.id} className="hover:text-primary">
+            <li key={navLink.id} className="hover:text-secondary">
               <Link to={navLink.link}>{navLink.title}</Link>
             </li>
           )
@@ -29,11 +29,11 @@ const Header = () => {
       </ul>
 
       {/* navbar mobile version */}
-      <div className=" flex-1  md:hidden flex justify-end block  relative">
+      <div className=" flex-1  md:hidden flex justify-end block relative ">
         <div data-testid="hamburger-menu" onClick={handleHamburgerMenu}>
           {isMenuOpen ? <AiOutlineClose size={28} /> : <HiMenu size={28} />}
         </div>
-        <ul data-testid="navbar-mobile" className={`${isMenuOpen ? "block" : "hidden"} absolute top-12 right-0 shadow-lg rounded-lg flex flex-col items-start px-5 py-8 slide-navbar`}>
+        <ul data-testid="navbar-mobile" className={`${isMenuOpen ? "block" : "hidden"} absolute top-12 right-0 shadow-lg rounded-lg flex flex-col items-start px-5 py-8 slide-navbar bg-white z-10 `}>
           {navLinks.map(navLink => {
             return (
               <li key={navLink.id} className="w-full p-4 border-b  hover:bg-gradient-to-l hover:from-slate-100 hover:text-primary rounded-md">
