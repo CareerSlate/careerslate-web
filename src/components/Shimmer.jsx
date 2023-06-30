@@ -38,7 +38,7 @@ const ShimmerCard = () => {
 
 const Shimmer = () => {
   return (
-    <section className="w-full flex justify-center items-start">
+    <section data-testid="shimmer" className="w-full flex justify-center items-start">
       <div className={`${style.boxWidth}  mt-10 px-6 rounded-sm ${style.flexStart} flex-col gap-6`}>
         {/* header */}
         <div className="w-full h-[100px] px-6 py-18 border rounded-sm bg-slate-100 flex justify-center items-center ">

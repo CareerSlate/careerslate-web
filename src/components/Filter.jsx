@@ -38,7 +38,7 @@ const Filter = ({ filterMenu }) => {
         {/* filter heading */}
         <div className="w-full pb-2 mb-2  border-b flex justify-between items-center">
           <h3 className="font-semibold ">Filters</h3>
-          <div className="lg:flex lg:items-center lg:gap-2 ">
+          <div data-testid="filter-buttons" className="lg:flex lg:items-center lg:gap-2 ">
             <Button name="Reset" handleClick={resetFilter} isLightTheme={true} style=" hidden lg:block " />
             <Button name="Submit" handleClick={handleFilter} style=" hidden lg:block " />
             <span onClick={handleFilterToggle} className="lg:hidden">

@@ -14,7 +14,7 @@ const Sort = ({ sortOptions }) => {
   return (
     <form className={`flex items-center gap-2`}>
       <label htmlFor="sort">Sort By </label>
-      <select name="sort" id="sort" onChange={handleSort} className="pl-2 pr-4 py-2 bg-white text-slate-800 outline-red-500 ">
+      <select data-testid="sort" name="sort" id="sort" onChange={handleSort} className="pl-2 pr-4 py-2 bg-white text-slate-800 outline-red-500 ">
         {sortOptions?.map(sortOption => {
           return (
             <option key={sortOption} value={sortOption}>

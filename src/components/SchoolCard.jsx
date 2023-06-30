@@ -20,7 +20,9 @@ const SchoolCard = ({ schoolData }) => {
       {/* school detail */}
       <div className={"flex-1 p-4 "}>
         <Link to={`school/${aff_no}`}>
-          <h3 className="font-semibold text-lg text-primary hover:text-secondary capitalize">{name ? name?.toLowerCase() : "N/A"}</h3>
+          <h3 data-testid="school-name" className="font-semibold text-lg text-primary hover:text-secondary capitalize">
+            {name ? name?.toLowerCase() : "N/A"}
+          </h3>
         </Link>
         <h4 className="capitalize">
           {district && district?.toLowerCase() + " ,"} {state && state.toLowerCase() + ", "} India

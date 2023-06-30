@@ -40,7 +40,7 @@ const School = () => {
           <Filter filterMenu={filterMenu} />
 
           <main className="bg-whit flex-1  py-4 rounded-sm flex flex-col gap-2">
-            {/* school menu */}
+            {/* sort & total schools */}
             <div className="flex justify-between items-center pb-2">
               <h3 className="font-semibold">{schoolCount} schools found</h3>
               <Sort sortOptions={sortOptions} />
@@ -49,7 +49,7 @@ const School = () => {
             {displaySchools.length === 0 && <div className="flex justify-center my-6 text-red-500 text-xl font-semibold ">No Match Found</div>}
 
             {/* school list */}
-            <div className="flex flex-col gap-5">
+            <div data-testid="school-card" className="flex flex-col gap-5">
               {displaySchools?.map(schoolData => {
                 return <SchoolCard key={schoolData.aff_no} schoolData={schoolData} />
               })}

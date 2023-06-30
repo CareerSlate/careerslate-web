@@ -5,7 +5,7 @@ const BreadCrumb = ({ options }) => {
   return (
     <div className={`w-full ${style.flexStart} bg-white border-b`}>
       <div className={`${style.boxWidth}  ${style.marginX} p-3`}>
-        <div className="flex items-center gap-1 capitalize text-xs">
+        <div data-testid="breadcrumb" className="flex items-center gap-1 capitalize text-xs">
           {options.map((option, index) => {
             return (
               <span key={option.name} className="flex items-center gap-1">
