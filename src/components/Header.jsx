@@ -33,12 +33,12 @@ const Header = () => {
         <div data-testid="hamburger-menu" onClick={handleHamburgerMenu}>
           {isMenuOpen ? <AiOutlineClose size={28} /> : <HiMenu size={28} />}
         </div>
-        <ul data-testid="navbar-mobile" className={`${isMenuOpen ? "block" : "hidden"} absolute top-12 right-0 shadow-lg rounded-lg flex flex-col items-start px-5 py-8 slide-navbar bg-white z-10 `}>
+        <ul data-testid="navbar-mobile" className={`${isMenuOpen ? "block" : "hidden"} absolute top-12 right-0 shadow-lg rounded-lg flex flex-col items-start px-5 py-8 slide-navbar bg-white z-[100] `}>
           {navLinks.map(navLink => {
             return (
-              <li key={navLink.id} className="w-full p-4 border-b  hover:bg-gradient-to-l hover:from-slate-100 hover:text-primary rounded-md">
-                <Link to={navLink.link}>{navLink.title}</Link>
-              </li>
+              <Link key={navLink.id} to={navLink.link} onClick={handleHamburgerMenu} className="w-full p-4 border-b  hover:bg-gradient-to-l hover:from-slate-100 hover:text-primary rounded-md">
+                <li>{navLink.title}</li>
+              </Link>
             )
           })}
         </ul>
