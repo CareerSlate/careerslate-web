@@ -9,7 +9,10 @@ export default {
         // primary: "#0556f3",
         // primary: "#ddeddd",
         // primary: "#25265e",
-        secondary: "#055ef3"
+        // secondary: "#055ef3"
+
+        secondary: "#1463D8",
+        secondary2: "#4069B5"
       },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"]

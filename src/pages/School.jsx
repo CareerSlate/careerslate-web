@@ -7,7 +7,6 @@ import style from "../style"
 const School = () => {
   const { serverError } = useFetchSchools()
   if (serverError) {
-    // console.log("serverError: ", serverError)
     return (
       <>
         <Shimmer />

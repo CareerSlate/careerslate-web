@@ -2,10 +2,11 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import App from "./App.jsx"
-import { Error, School } from "./pages"
+import { Error, School, SchoolDetails } from "./pages"
 import "./index.css"
 import { Provider } from "react-redux"
 import store from "./store/store"
+import "./utils/server.js"
 
 const appConfig = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const appConfig = createBrowserRouter([
       {
         path: "/",
         element: <School />
+      },
+      {
+        path: "school/:id",
+        element: <SchoolDetails />
       }
     ]
   }

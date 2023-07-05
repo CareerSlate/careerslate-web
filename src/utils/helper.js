@@ -68,3 +68,8 @@ export function filterSchool(schools, filterOption) {
     console.log("Error: ", error)
   }
 }
+
+//  function to get random image name
+export function getImage(prefix, start, end) {
+  return prefix + Math.floor(start + Math.random() * (end - start + 1))
+}

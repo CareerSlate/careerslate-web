@@ -36,7 +36,7 @@ const ShimmerCard = () => {
   )
 }
 
-const Shimmer = () => {
+const Shimmer = ({ hideAside }) => {
   return (
     <section data-testid="shimmer" className="w-full flex justify-center items-start">
       <div className={`${style.boxWidth}  mt-10 px-6 rounded-sm ${style.flexStart} flex-col gap-6`}>
@@ -48,13 +48,15 @@ const Shimmer = () => {
         {/* body */}
         <div className="w-full px-6 py-10 border rounded-sm flex justify-center items-start  gap-4">
           {/* aside */}
-          <div className="hidden lg:flex flex-col rounded-sm gap-6 w-[30%] px-6 py-6 bg-slate-100 border">
-            {Array(SHIMMER_ASIDE_CARDS)
-              .fill("")
-              .map((ele, index) => {
-                return <ShimmerBlock key={index} height={20} width={100} />
-              })}
-          </div>
+          {!hideAside && (
+            <div className="hidden lg:flex flex-col rounded-sm gap-6 w-[30%] px-6 py-6 bg-slate-100 border">
+              {Array(SHIMMER_ASIDE_CARDS)
+                .fill("")
+                .map((ele, index) => {
+                  return <ShimmerBlock key={index} height={20} width={100} />
+                })}
+            </div>
+          )}
 
           {/* main */}
           <div className="rounded-sm flex-1 flex flex-col gap-4">

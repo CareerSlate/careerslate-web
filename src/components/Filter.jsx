@@ -46,12 +46,14 @@ const Filter = ({ filterMenu }) => {
             </span>
           </div>
         </div>
+
         {/* filter form */}
         <form className="flex flex-col gap-4 overflow-scroll lg:overflow-hidden scrollbar-hide">
           {filterMenu?.map(filterOption => {
             return <FilterCard key={filterOption.id} {...filterOption} />
           })}
         </form>
+
         {/* submit form */}
         <div className="pt-4 flex items-center gap-4 lg:hidden">
           <Button name="Reset" handleClick={resetFilter} isLightTheme={true} />

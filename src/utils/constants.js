@@ -1,7 +1,7 @@
 import { logo, error } from "../assets"
 import { HiMenu } from "react-icons/hi"
 
-export const DISPLAY_SCHOOL_OFFSET = 5
+export const DISPLAY_SCHOOL_OFFSET = 10
 
 export const SHIMMER_WIDGET_CARDS = 10
 export const SHIMMER_ASIDE_CARDS = 15
