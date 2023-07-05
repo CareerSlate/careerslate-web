@@ -6,6 +6,7 @@ import { Error, School, SchoolDetails } from "./pages"
 import "./index.css"
 import { Provider } from "react-redux"
 import store from "./store/store"
+import "./utils/server.js"
 
 const appConfig = createBrowserRouter([
   {

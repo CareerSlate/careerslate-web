@@ -1,72 +1,29 @@
 import { useParams } from "react-router-dom"
-import { SCHOOL_SEARCH } from "../__test__/mocks/mockDataSearch"
 import Info from "./Info"
 import FacilitiesCard from "./FacilitiesCard"
-import { MdLocationOn } from "react-icons/md"
+import Shimmer from "../components/Shimmer"
+import ServerError from "./ServerError"
 import * as galleryImg from "../assets/gallery"
-import { getImage } from "../utils/helper"
+import { MdLocationOn } from "react-icons/md"
+import useFetchSchoolById from "../utils/useFetchSchoolById"
 
-const Details = ({ schoolData }) => {
+const Details = () => {
   const { id } = useParams()
+  const { schoolData, board, facilitiesOptions, images, serverError } = useFetchSchoolById(id)
+  const { name, soc_name, address, district, region, state, pincode, n_medium, n_school_type, n_category, status, year_found, princi_name, ph_no, off_ph_no, email, website, p_area_meter, p_area_acre, p_area_playground, p_health_cert } = schoolData
 
-  schoolData = SCHOOL_SEARCH[id]
-  const { aff_no, name, soc_name, address, district, region, state, pincode, n_medium, n_school_type, n_category, status, year_found, princi_name, ph_no, off_ph_no, email, website, p_area_meter, p_area_acre, p_area_playground, p_health_cert } = schoolData
-  const { i_classrooms_no, i_composite_lab_no, i_phy_lab_no, i_chem_lab_no, i_bio_lab_no, i_biotech_lab_no, i_math_lab_no, i_cs_lab_no, i_home_lab_no, i_other_lab_no } = schoolData
-  const { f_hostel, p_potable_water, i_library_no, f_swimming_pool, f_indoor_games, f_dance_rooms, f_music_rooms, f_health_checkup } = schoolData
-  const board = "CBSE"
-  const facilitiesOptions = [
-    {
-      title: "infrastructure",
-      options: [
-        { name: "hostel", value: f_hostel },
-        { name: "AC hostels", value: false },
-        { name: "Sports Academy", value: false },
-        { name: "Cafeteria", value: false },
-        { name: "Drinking Water", value: true },
-        { name: "Toilet facilities", value: true },
-        { name: "library", value: i_library_no },
-        { name: "Gymnasium", value: false },
-        { name: "Symposium", value: false },
-        { name: "Play Area", value: true },
-        { name: "health checkup", value: f_health_checkup },
-        { name: "Interactive Boards", value: false },
-        { name: "Wi-Fi", value: false }
-      ]
-    },
-    {
-      title: "sport & fitness",
-      options: [
-        { name: "swimming pool", value: f_swimming_pool },
-        { name: "indoor games", value: f_indoor_games },
-        { name: "yoga activity", value: false },
-        { name: "dance rooms", value: f_dance_rooms },
-        { name: "music rooms", value: f_music_rooms },
-        { name: "aerobics", value: false }
-      ]
-    },
-    {
-      title: "facilities",
-      options: [
-        { name: "Counseling", value: false },
-        { name: "robotics labs", value: false },
-        { name: "composite lab", value: i_composite_lab_no },
-        { name: "physic lab", value: i_phy_lab_no },
-        { name: "chemistry lab", value: i_chem_lab_no },
-        { name: "biology lab", value: i_bio_lab_no },
-        { name: "biotech lab", value: i_biotech_lab_no },
-        { name: "math lab", value: i_math_lab_no },
-        { name: "CS lab", value: i_cs_lab_no },
-        { name: "digital lab", value: false }
-      ]
-    }
-  ]
+  if (serverError) {
+    return (
+      <>
+        <Shimmer />
+        <ServerError />
+      </>
+    )
+  }
 
-  const images = Array(4)
-    .fill("")
-    .map((e, index) => {
-      return { id: index, url: getImage("img", 1, 9) }
-    })
-  // console.log("img: ", img)
+  if (Object.keys(schoolData).length === 0) {
+    return <Shimmer hideAside={true} />
+  }
 
   return (
     <div>
