@@ -1,34 +1,17 @@
-import { useParams } from "react-router-dom"
 import Info from "./Info"
 import FacilitiesCard from "./FacilitiesCard"
-import Shimmer from "../components/Shimmer"
-import ServerError from "./ServerError"
 import * as galleryImg from "../assets/gallery"
 import { MdLocationOn } from "react-icons/md"
-import useFetchSchoolById from "../utils/useFetchSchoolById"
+import { extractSchoolInfo } from "../utils/helper"
 
-const Details = () => {
-  const { id } = useParams()
-  const { schoolData, board, facilitiesOptions, images, serverError } = useFetchSchoolById(id)
-  const { name, soc_name, address, district, region, state, pincode, n_medium, n_school_type, n_category, status, year_found, princi_name, ph_no, off_ph_no, email, website, p_area_meter, p_area_acre, p_area_playground, p_health_cert } = schoolData
-
-  if (serverError) {
-    return (
-      <>
-        <Shimmer />
-        <ServerError />
-      </>
-    )
-  }
-
-  if (Object.keys(schoolData).length === 0) {
-    return <Shimmer hideAside={true} />
-  }
+const Details = ({ schoolInfo }) => {
+  const { name, soc_name, address, district, region, state, pincode, n_medium, n_school_type, n_category, status, year_found, princi_name, ph_no, off_ph_no, email, website, p_area_meter, p_area_acre, p_area_playground, p_health_cert } = schoolInfo
+  const { board, facilitiesOptions, images } = extractSchoolInfo(schoolInfo)
 
   return (
     <div>
       {/* School Summary */}
-      <div id="summary" className="bg-white px-4 py-6 rounded-md shadow-md">
+      <div id="summary" className="bg-white px-4 py-6 rounded-md shadow-md scroll-mt-20">
         {/* heading */}
         <h1 className="pb-0.5 font-bold text-2xl capitalize text-secondary hover:text-primary">{name ? name?.toLowerCase() : "N/A"}</h1>
         <h3 className="capitalize">
@@ -45,7 +28,7 @@ const Details = () => {
       </div>
 
       {/* School Information */}
-      <div id="information" className="my-6 bg-white px-4 py-6 rounded-md shadow-md">
+      <div id="information" className="my-6 bg-white px-4 py-6 rounded-md shadow-md scroll-mt-20">
         {/* heading */}
         <div className="relative">
           <h2 className="font-bold text-2xl text-primary relative">School Information</h2>
@@ -66,7 +49,7 @@ const Details = () => {
       </div>
 
       {/* Facilities & Activites */}
-      <div id="facilities" className="my-6 bg-white px-4 py-6 rounded-md shadow-md">
+      <div id="facilities" className="my-6 bg-white px-4 py-6 rounded-md shadow-md scroll-mt-20">
         {/* heading */}
         <div className="relative">
           <h2 className="font-bold text-2xl text-primary relative">Facilities & Activites</h2>
@@ -79,7 +62,7 @@ const Details = () => {
       </div>
 
       {/* Location */}
-      <div id="location" className="my-6 bg-white px-4 py-6 rounded-md shadow-md">
+      <div id="location" className="my-6 bg-white px-4 py-6 rounded-md shadow-md scroll-mt-20">
         {/* heading */}
         <div className="relative">
           <h2 className="font-bold text-2xl text-primary relative">Location</h2>
@@ -95,7 +78,8 @@ const Details = () => {
               {address && `${address?.toLowerCase()}, `}
               {district && `${district?.toLowerCase()}, `}
               {/* {region && `${region?.toLowerCase()}, `} */}
-              {state?.toLowerCase()}
+              {state && `${state?.toLowerCase()}, `}
+              {pincode}
             </p>
           </div>
           {/* google map */}
@@ -104,7 +88,7 @@ const Details = () => {
       </div>
 
       {/* Gallery */}
-      <div id="gallery" className="my-6 bg-white px-4 py-6 rounded-md shadow-md">
+      <div id="gallery" className="my-6 bg-white px-4 py-6 rounded-md shadow-md scroll-mt-20">
         {/* heading */}
         <div className="relative">
           <h2 className="font-bold text-2xl text-primary relative">Gallery</h2>

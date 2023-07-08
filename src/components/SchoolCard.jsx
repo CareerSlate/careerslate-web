@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom"
-// import { school } from "../assets"
 import school from "../assets/campus.svg"
-import { getImage } from "../utils/helper"
+// import { getImage } from "../utils/helper"
 import * as schoolImg from "../assets/schools"
 
 const SchoolCard = ({ schoolData }) => {
-  // console.log(name)
-  const { aff_no, name, region, district, pincode, state, status, n_medium, soc_name, year_found, princi_name, off_ph_no, n_school_type } = schoolData
-  const board = "CBSE"
-  const img = getImage("img", 1, 19)
+  // console.log(schoolData)
+  const { aff_no, name, board, img, region, district, pincode, state, status, n_medium, soc_name, year_found, princi_name, off_ph_no, n_school_type } = schoolData
+  // const img = getImage("img", 1, 19)
   return (
     <div className="w-full border rounded-sm bg-white flex sm:flex-row flex-col justify-between shadow-md hover:shadow-xl ">
       {/* school image */}

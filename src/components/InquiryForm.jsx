@@ -22,6 +22,7 @@ const InquiryForm = () => {
     setEmail("")
     setPhone("")
     setMessage("")
+    dispatch(setIsSidebarOpen())
   }
   return (
     <div className="w-[100%] sm:w-[60%] lg:w-full h-full lg:h-auto p-5 rounded-sm bg-white flex flex-col ">
