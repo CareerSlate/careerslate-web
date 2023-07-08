@@ -28,7 +28,7 @@ const DetailFixedMenu = () => {
           </div>
           {/* claim school */}
           <div>
-            <Button name="claim school" style="bg-[#ffc107] text-gray-800 py-2 border-[#ffc107] hover:bg-slate-50 !rounded-md whitespace-nowrap" />
+            <Button name="claim school" style="bg-[#ffc107] text-gray-800 py-2 border-[#ffc107] hover:bg-slate-50 hover:text-gray-800 !rounded-md whitespace-nowrap" />
           </div>
         </div>
       </nav>

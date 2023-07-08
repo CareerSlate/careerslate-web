@@ -1,5 +1,5 @@
 import { Model, createServer } from "miragejs"
-import { SCHOOL_DETAIL } from "../__test__/mocks/mockData"
+import { SCHOOL_DETAIL } from "../__test__/mocks/mockDataSchool"
 import { SCHOOL_SEARCH } from "../__test__/mocks/mockDataSearch"
 
 createServer({
