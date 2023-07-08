@@ -4,6 +4,7 @@ import { setActiveMenuOption, setIsSidebarOpen } from "../store/schoolDetailSlic
 import { BackToTop, BreadCrumb, DetailFixedMenu, DetailSideBar, Details, Search, Shimmer } from "../components"
 import { breadCrumbOptions } from "../utils/constants"
 import style from "../style"
+import { ScrollRestoration } from "react-router-dom"
 
 const SchoolDetails = () => {
   const dispatch = useDispatch()
@@ -22,6 +23,7 @@ const SchoolDetails = () => {
 
   return (
     <section id="school-detail" className={`w-full bg-slate-200/40 relative `}>
+      <ScrollRestoration />
       <Search />
       <BreadCrumb options={breadCrumbOptions} />
 
