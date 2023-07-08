@@ -1,4 +1,4 @@
-# CareerSlate
+# CareerSlate.com
 
 A School Discovery, Selection & Reviews Platform using ReactJs & Redux.
 
@@ -28,8 +28,13 @@ CareerSlate lets you explore nearby schools, compare and apply to them, within j
 
 <img src="./src/assets/screenshots/sc1.png" alt="web_version" width="600px" />
 <br/>
-<img src="./src/assets/screenshots/sc2.png" alt="mobile_version" width="300px" />
+<img src="./src/assets/screenshots/sc2.png" alt="mobile_version" width="600px" />
+<br/>
 
-<img src="./src/assets/screenshots/sc3.png" alt="mobile_version" width="300px" />
+### Search
 
+<img src="./src/assets/screenshots/sc3.png" alt="mobile_version" width="600px" />
+<br/>
+
+### Mobile Responsive
 <img src="./src/assets/screenshots/sc4.png" alt="mobile_version" width="300px" />
