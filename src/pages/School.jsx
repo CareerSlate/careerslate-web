@@ -3,6 +3,7 @@ import { SchoolCard, Search, BreadCrumb, Intro, Sort, LoadMore, Filter, BackToTo
 import useFetchSchools from "../utils/useFetchSchools"
 import { sortOptions, filterMenu, introDetail, breadCrumbOptions } from "../utils/constants"
 import style from "../style"
+import { ScrollRestoration } from "react-router-dom"
 
 const School = () => {
   const { serverError } = useFetchSchools()
@@ -26,6 +27,7 @@ const School = () => {
 
   return (
     <section id="school" className={`w-full bg-slate-200/40 relative `}>
+      <ScrollRestoration />
       <Search />
 
       <BreadCrumb options={breadCrumbOptions} />
@@ -67,7 +69,7 @@ const School = () => {
           <BottomFilterSortButton />
 
           {/* fixed - back to top */}
-          <BackToTop linkId={"school"} />
+          <BackToTop linkId={"nav"} />
         </div>
       </div>
     </section>

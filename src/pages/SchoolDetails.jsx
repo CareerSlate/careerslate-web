@@ -62,7 +62,7 @@ const SchoolDetails = () => {
 
       {/* back to top  */}
       <div onClick={handleFixedMenuOption} className=" fixed  bottom-5 right-5 lg:right-10">
-        <BackToTop linkId={"school-detail"} />
+        <BackToTop linkId={"nav"} />
       </div>
 
       {/* mobile Inquiry form  */}

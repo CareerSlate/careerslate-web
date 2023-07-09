@@ -11,7 +11,7 @@ const Header = () => {
     setIsMenuOpen(prev => !prev)
   }
   return (
-    <nav className="flex justify-between items-center gap-4 py-3 ">
+    <nav id="nav" className="flex justify-between items-center gap-4 py-3 ">
       {/* logo */}
       <Link to="/">
         <img data-testid="logo" src={logoImg.img} alt={logoImg.alt} className="w-[160px]" />
