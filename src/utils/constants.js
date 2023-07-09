@@ -18,15 +18,20 @@ export const navLinks = [
     title: "Home",
     link: "/"
   },
-  {
-    id: "explore-schools",
-    title: "Explore Schools",
-    link: "/find-schools"
-  },
+  // {
+  //   id: "explore-schools",
+  //   title: "Explore Schools",
+  //   link: "/find-schools"
+  // },
   {
     id: "compare-schools",
     title: "Compare Schools",
     link: "/compare-schools"
+  },
+  {
+    id: "register-school",
+    title: "Register School",
+    link: "/register-school"
   }
 ]
 
@@ -87,7 +92,7 @@ export const filterMenu = [
 
 // Intro
 export const introDetail = {
-  title: "List of top CBSE Schools in 2023 Ranking",
+  title: "List of top Schools in 2023-24 Ranking",
   description: "Checkout list of Top CBSE Schools in 2023 offering CBSE board curriculum. Find below the complete list of CBSE Schools in offering CBSE Curriculum with information on Fees, Admission procedure, Ranking, Rating & Reviews, Curriculum, Facilities, Contact Details and address. This list of Top Best CBSE Schools in covers CBSE affiliated Schools in ."
 }
 
@@ -95,18 +100,14 @@ export const introDetail = {
 export const breadCrumbOptions = [
   {
     name: "home",
-    link: "#"
+    link: "/"
   },
   {
     name: "school",
-    link: "#"
+    link: "/"
   },
   {
     name: "india",
-    link: "#"
-  },
-  {
-    name: "CBSE",
     link: "#"
   }
 ]

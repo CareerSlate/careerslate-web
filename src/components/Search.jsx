@@ -16,15 +16,23 @@ const Search = () => {
   const searchCache = useSelector(store => store.search.searchCache)
 
   useEffect(() => {
-    let searchedSchool
-    if (searchCache[searchText]) {
-      searchedSchool = searchCache[searchText]
-    } else {
-      searchedSchool = searchSchool(schools, searchText)
-      dispatch(setSearchCache({ [searchText]: searchedSchool }))
+    /* debouncing 200ms */
+    const timer = setTimeout(() => {
+      let searchedSchool
+      if (searchCache[searchText]) {
+        /* first check in cache */
+        searchedSchool = searchCache[searchText]
+      } else {
+        /* if data not found, the call API */
+        searchedSchool = searchSchool(schools, searchText)
+        dispatch(setSearchCache({ [searchText]: searchedSchool }))
+      }
+      dispatch(updateSchools(searchedSchool))
+      dispatch(resetDisplaySchools())
+    }, 200)
+    return () => {
+      clearTimeout(timer)
     }
-    dispatch(updateSchools(searchedSchool))
-    dispatch(resetDisplaySchools())
   }, [searchText])
 
   return (
